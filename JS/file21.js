@@ -43,7 +43,7 @@ const products = [
   },
 ]
 
-let search = 'Laptop'
-
-const resultArray = products.filter((product) => product.category === search)
+let category = 'ProductId'
+let text = 1
+const resultArray = products.find((product) => product.id === text)
 console.log(resultArray)

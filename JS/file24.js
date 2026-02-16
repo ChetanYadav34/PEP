@@ -42,8 +42,4 @@ const products = [
     category: 'Laptop',
   },
 ]
-
-let search = 'Laptop'
-
-const resultArray = products.filter((product) => product.category === search)
-console.log(resultArray)
+console.table(products)
