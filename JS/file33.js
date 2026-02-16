@@ -35,3 +35,4 @@ const {
   marks: { math },
 } = student
 console.log(math)
+
