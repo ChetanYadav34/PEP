@@ -12,6 +12,10 @@
 // TDZ =
 
 // var name
-let name
-console.log(name)
-name = 'John'
+// let name
+// console.log(name)
+// name = 'John'
+
+// functions are fully hoisted
+greet()
+function greet() {}
