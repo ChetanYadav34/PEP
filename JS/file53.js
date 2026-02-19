@@ -6,7 +6,8 @@ function outer() {
   }
   return inner
 }
+console.log(counter())
+console.log(counter())
+console.log(counter())
+
 const counter = outer()
-console.log(counter())
-console.log(counter())
-console.log(counter())
