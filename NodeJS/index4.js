@@ -1,21 +1,31 @@
-import express from 'express'
+import express, { request, response } from 'express'
 const app = express()
-app.listen(8080, () => console.log('Server Started'))
-// app.get('/:id', (req, res) => {
-//   console.log(req.url)
-//   console.log(req.params)
-//   res.send(req.params.id + req.params.email)
-// })
-app.get('/id/:id/email', (req, res) => {
-  console.log(req.url)
-  console.log(req.params)
-  console.log(req.params.id + req.params.email)
+app.listen(8080, () => {
+  console.log('Server Started....')
 })
-app.get('/id/:id/email/:email', (req, res) => {
-  console.log(req.url)
-  console.log(req.params)
-  console.log(req.params.id + req.params.email)
+
+app.get('/:id', (request, response) => {
+  // http://localhost:8080/10
+  console.log(request.url)
+  console.log(request.params)
+  response.send(request.params.id)
 })
-app.get('/home', (req, res) => {
-  res.send('Hello World')
+
+app.get('/:id/:email', (request, response) => {
+  //http://localhost:8080/10/abc@gmail.com
+  console.log(request.url)
+  console.log(request.params)
+  response.send(request.params.id + request.params.email)
+})
+
+app.get('/id/:id/email/:email', (request, response) => {
+  //http://localhost:8080/id/10/email/abc@gmail.com
+  console.log(request.url)
+  console.log(request.params)
+  response.send(request.params.id + request.params.email)
+})
+
+app.get('/home', (request, response) => {
+  // console.log(request.url)
+  response.send('Hello World..!!')
 })
