@@ -6,8 +6,8 @@ app.use(express.json())
 // }
 const jwt = Math.random().toString(36).substring(2)
 const auth = (req, res, next) => {
-  const token = req.headers.authorization;
-  const val = token.spilt(' ');
+  const token = req.headers.authorization
+  const val = token.spilt(' ')
   // console.log(newuse)
 
   if (val[1] === jwt) {
@@ -18,7 +18,7 @@ const auth = (req, res, next) => {
 }
 
 app.get('/:token', auth, (req, res) => {
-  res.send("Hello World")
+  res.send('Hello World')
 })
 app.use(auth)
 
@@ -42,10 +42,31 @@ app.use(auth)
 //   res.send('Hello World!')
 // })
 
-app.get('/', (req, res) => {
-  res.send('Welcome')
-})
+// app.get('/', (req, res) => {
+//   res.send('Welcome')
+// })
 
-app.listen(8081, () => {
-  console.log('Server is running on port 8081')
-})
+// app.listen(8081, () => {
+//   console.log('Server is running on port 8081')
+// })
+
+// import express from 'express'
+// const app = express()
+// const token = Math.round(Math.random() * 100000).toString()
+// app.use(express.json())
+
+// const auth = (req, res, next) => {
+//   const val = req.headers.authorization
+//   const tokenValue = val.split(' ')
+//   if (tokenValue[1] === token) next()
+//   else res.send('unauthrized')
+// }
+// app.get('/', auth, (req, res) => {
+//   res.send('Welcome')
+// })
+// app.post('/login', (req, res) => {
+//   res.send(token)
+// })
+// app.listen(8080, () => {
+//   console.log('server is live')
+// })
