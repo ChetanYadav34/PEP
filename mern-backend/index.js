@@ -9,3 +9,4 @@ const startServer = async () => {
 startServer()
 app.use(express.json())
 app.use('/api/users', userRouter)
+app.use('/api/products', productRouter)
