@@ -6,6 +6,8 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Hello <%= name %></h1>
+    <% products.forEach(product => { %>
+    <li><%= product.name  %>-<%= product.price  %></li>
+    <% }) %>
   </body>
 </html>
